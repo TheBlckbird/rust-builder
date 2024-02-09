@@ -1,5 +1,5 @@
 struct MyNumber {
-    pub num: i32,
+    num: i32,
 }
 
 impl MyNumber {
@@ -43,6 +43,18 @@ impl MyNumber {
         self
     }
 
+    pub fn add(mut self, num: i32) -> Self {
+        self.num += num;
+
+        self
+    }
+
+    pub fn subtract(mut self, num: i32) -> Self {
+        self.num -= num;
+
+        self
+    }
+
     pub fn get(self) -> i32 {
         self.num
     }
@@ -52,8 +64,8 @@ fn main() {
     let builder_struct = MyNumber::new();
 
     let num = builder_struct
-        .add_one()
-        .subtract_three()
+        .add(1)
+        .subtract(3)
         .add_two()
         .subtract_two()
         .add_three()
@@ -61,6 +73,8 @@ fn main() {
         .add_three()
         .add_two()
         .subtract_one()
+        .add_one()
+        .subtract_three()
         .get();
 
     println!("{num}");
