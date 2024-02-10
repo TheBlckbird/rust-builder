@@ -7,42 +7,6 @@ impl MyNumber {
         Self { num: 0 }
     }
 
-    pub fn add_one(mut self) -> Self {
-        self.num += 1;
-
-        self
-    }
-
-    pub fn add_two(mut self) -> Self {
-        self.num += 2;
-
-        self
-    }
-
-    pub fn add_three(mut self) -> Self {
-        self.num += 3;
-
-        self
-    }
-
-    pub fn subtract_one(mut self) -> Self {
-        self.num -= 1;
-
-        self
-    }
-
-    pub fn subtract_two(mut self) -> Self {
-        self.num -= 2;
-
-        self
-    }
-
-    pub fn subtract_three(mut self) -> Self {
-        self.num -= 3;
-
-        self
-    }
-
     pub fn add(mut self, num: i32) -> Self {
         self.num += num;
 
@@ -61,20 +25,13 @@ impl MyNumber {
 }
 
 fn main() {
-    let builder_struct = MyNumber::new();
-
-    let num = builder_struct
-        .add(1)
-        .subtract(3)
-        .add_two()
-        .subtract_two()
-        .add_three()
-        .subtract_two()
-        .add_three()
-        .add_two()
-        .subtract_one()
-        .add_one()
-        .subtract_three()
+    let num = MyNumber::new()
+        .add(10)
+        .subtract(5)
+        .add(5)
+        .add(100)
+        .subtract(34)
+        .add(275)
         .get();
 
     println!("{num}");
